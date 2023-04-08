@@ -1,8 +1,12 @@
 #pragma once
 #include <string>
 #include <msclr\marshal_cppstd.h>
+#include <fstream>
+#include <stdio.h>	
 
 namespace VEZEETA {
+
+	int Dindex = 0, inputmax;
 
 	using namespace System;
 	using namespace System::ComponentModel;
@@ -12,7 +16,7 @@ namespace VEZEETA {
 	using namespace System::Drawing;
 
 	/// <summary>
-	
+
 	struct Patient_details
 	{
 		std::string pname;
@@ -53,6 +57,38 @@ namespace VEZEETA {
 			this->pictureBox11->Hide();
 			this->ppatient->Hide();
 			this->pdoctor->Hide();
+
+
+			std::ifstream in;
+			in.open("doctor.txt");
+			std::string word;
+
+			int wordnum = 0;
+			while (getline(in, word, ',')) {
+
+				
+
+				if(wordnum % 6== 0 ) doctor[Dindex].dname= word;
+
+				else if (wordnum % 6 == 1) doctor[Dindex].demail = word;
+
+				else if (wordnum % 6 == 2) doctor[Dindex].dpass = word;
+	
+				else if (wordnum % 6 == 3) doctor[Dindex].fees = word;
+
+				else if (wordnum % 6 == 4) doctor[Dindex].location = word;
+
+				else if (wordnum % 6 == 5) { doctor[Dindex].department = word; Dindex++; }
+
+
+				wordnum++;
+
+			}
+			inputmax = Dindex - 1;
+			
+
+		
+
 
 			//
 			//TODO: Add the constructor code here
@@ -1272,7 +1308,22 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 }
 private: System::Void pictureBox14_Click(System::Object^ sender, System::EventArgs^ e) {
 
+	Dindex--;
+	std::ofstream out;
+	out.open("doctor.txt");
+	for (size_t i = 0; i <= Dindex; i++)
+	{
+		out << doctor[i].dname << ',';
+		out << doctor[i].demail << ',';
+		out << doctor[i].dpass << ',';
+		out << doctor[i].location << ',';
+		out << doctor[i].fees << ',';
+		out << doctor[i].department<< ',';
+		if (i >= inputmax)out << "\n";
+	}
+
 	Application::Exit();
+
 }
 private: System::Void textBox4_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 
@@ -1321,13 +1372,13 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 	}
 	else {
 		if (did->Text == "1234") {
-
-			doctor[index].dname = msclr::interop::marshal_as<std::string>(dname->Text);
-			doctor[index].demail = msclr::interop::marshal_as<std::string>(demail->Text);
-			doctor[index].dpass = msclr::interop::marshal_as<std::string>(dpass->Text);
-			doctor[index].location = msclr::interop::marshal_as<std::string>(location->Text);
-			doctor[index].fees = msclr::interop::marshal_as<std::string>(fees->Text);
-			doctor[index].department = msclr::interop::marshal_as<std::string>(comboBox1->Text);
+			doctor[Dindex].dname = msclr::interop::marshal_as<std::string>(dname->Text);
+			doctor[Dindex].demail = msclr::interop::marshal_as<std::string>(demail->Text);
+			doctor[Dindex].dpass = msclr::interop::marshal_as<std::string>(dpass->Text);
+			doctor[Dindex].location = msclr::interop::marshal_as<std::string>(location->Text);
+			doctor[Dindex].fees = msclr::interop::marshal_as<std::string>(fees->Text);
+			doctor[Dindex].department = msclr::interop::marshal_as<std::string>(comboBox1->Text);
+			Dindex++;
 
 
 			String^ sd = msclr::interop::marshal_as<String^>(doctor[index].department);
@@ -1388,6 +1439,10 @@ private: System::Void pemail_TextChanged(System::Object^ sender, System::EventAr
 	this->label4->Hide();
 
 }
+
+
+
+
 };
 }
 	
