@@ -54,6 +54,7 @@ namespace VEZEETA {
 
 
 			InitializeComponent();
+
 			this->pictureBox11->Hide();
 			this->ppatient->Hide();
 			this->pdoctor->Hide();
@@ -64,6 +65,8 @@ namespace VEZEETA {
 			std::string word;
 
 			int wordnum = 0;
+
+
 			while (getline(in, word, ',')) {
 
 				
@@ -582,9 +585,9 @@ private: System::Windows::Forms::Button^ button3;
 			this->label4->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			this->label4->Location = System::Drawing::Point(1, 3);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(63, 27);
+			this->label4->Size = System::Drawing::Size(219, 27);
 			this->label4->TabIndex = 2;
-			this->label4->Text = L"email";
+			this->label4->Text = L"email                          ";
 			this->label4->Click += gcnew System::EventHandler(this, &Login_Sign::label4_Click);
 			// 
 			// pemail
@@ -621,9 +624,9 @@ private: System::Windows::Forms::Button^ button3;
 			this->label2->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			this->label2->Location = System::Drawing::Point(1, 2);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(104, 27);
+			this->label2->Size = System::Drawing::Size(218, 27);
 			this->label2->TabIndex = 2;
-			this->label2->Text = L"password";
+			this->label2->Text = L"password                   ";
 			this->label2->Click += gcnew System::EventHandler(this, &Login_Sign::label2_Click);
 			// 
 			// ppass
@@ -638,7 +641,7 @@ private: System::Windows::Forms::Button^ button3;
 			this->ppass->Size = System::Drawing::Size(209, 23);
 			this->ppass->TabIndex = 0;
 			this->ppass->UseSystemPasswordChar = true;
-			this->ppass->TextChanged += gcnew System::EventHandler(this, &Login_Sign::tpass_TextChanged);
+			this->ppass->TextChanged += gcnew System::EventHandler(this, &Login_Sign::ppass_TextChanged);
 			// 
 			// lSign
 			// 
@@ -677,9 +680,9 @@ private: System::Windows::Forms::Button^ button3;
 			this->label1->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			this->label1->Location = System::Drawing::Point(3, 2);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(107, 27);
+			this->label1->Size = System::Drawing::Size(215, 27);
 			this->label1->TabIndex = 2;
-			this->label1->Text = L"username";
+			this->label1->Text = L"username                  ";
 			this->label1->Click += gcnew System::EventHandler(this, &Login_Sign::label1_Click_1);
 			// 
 			// pname
@@ -814,9 +817,9 @@ private: System::Windows::Forms::Button^ button3;
 			this->comboBox1->Font = (gcnew System::Drawing::Font(L"Lato", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(10) {
-				L"Children specialist", L"Dermatology", L"Dentist",
-					L"Diagnostic radiology", L"Ear, Nose, and Throat ", L"Medical genetics", L"Microbiology", L"Neurology", L"Surgery", L"Therapist"
+			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(9) {
+				L"Children", L"Dermatology", L"Dentist", L"Radiology",
+					L"Genetics", L"Microbiology", L"Neurology", L"Surgery", L"Therapist"
 			});
 			this->comboBox1->Location = System::Drawing::Point(242, 552);
 			this->comboBox1->Name = L"comboBox1";
@@ -865,9 +868,9 @@ private: System::Windows::Forms::Button^ button3;
 			this->label17->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			this->label17->Location = System::Drawing::Point(0, 2);
 			this->label17->Name = L"label17";
-			this->label17->Size = System::Drawing::Size(57, 27);
+			this->label17->Size = System::Drawing::Size(75, 27);
 			this->label17->TabIndex = 2;
-			this->label17->Text = L"Fees";
+			this->label17->Text = L"Fees   ";
 			this->label17->Click += gcnew System::EventHandler(this, &Login_Sign::label17_Click);
 			// 
 			// fees
@@ -913,9 +916,9 @@ private: System::Windows::Forms::Button^ button3;
 			this->label16->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			this->label16->Location = System::Drawing::Point(0, 2);
 			this->label16->Name = L"label16";
-			this->label16->Size = System::Drawing::Size(144, 27);
+			this->label16->Size = System::Drawing::Size(222, 27);
 			this->label16->TabIndex = 2;
-			this->label16->Text = L"Your Location";
+			this->label16->Text = L"Your Location             ";
 			this->label16->Click += gcnew System::EventHandler(this, &Login_Sign::label16_Click);
 			// 
 			// location
@@ -926,7 +929,7 @@ private: System::Windows::Forms::Button^ button3;
 			this->location->Font = (gcnew System::Drawing::Font(L"Lato", 14));
 			this->location->Location = System::Drawing::Point(2, 4);
 			this->location->Name = L"location";
-			this->location->Size = System::Drawing::Size(209, 23);
+			this->location->Size = System::Drawing::Size(222, 23);
 			this->location->TabIndex = 0;
 			this->location->TextChanged += gcnew System::EventHandler(this, &Login_Sign::dlocation_TextChanged);
 			// 
@@ -1058,9 +1061,9 @@ private: System::Windows::Forms::Button^ button3;
 			this->label10->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			this->label10->Location = System::Drawing::Point(1, 3);
 			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(63, 27);
+			this->label10->Size = System::Drawing::Size(219, 27);
 			this->label10->TabIndex = 2;
-			this->label10->Text = L"email";
+			this->label10->Text = L"email                          ";
 			this->label10->Click += gcnew System::EventHandler(this, &Login_Sign::label10_Click);
 			// 
 			// demail
@@ -1097,9 +1100,9 @@ private: System::Windows::Forms::Button^ button3;
 			this->label11->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			this->label11->Location = System::Drawing::Point(1, 2);
 			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(104, 27);
+			this->label11->Size = System::Drawing::Size(218, 27);
 			this->label11->TabIndex = 2;
-			this->label11->Text = L"password";
+			this->label11->Text = L"password                   ";
 			this->label11->Click += gcnew System::EventHandler(this, &Login_Sign::label11_Click);
 			// 
 			// dpass
@@ -1138,9 +1141,9 @@ private: System::Windows::Forms::Button^ button3;
 			this->label13->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			this->label13->Location = System::Drawing::Point(3, 2);
 			this->label13->Name = L"label13";
-			this->label13->Size = System::Drawing::Size(107, 27);
+			this->label13->Size = System::Drawing::Size(215, 27);
 			this->label13->TabIndex = 2;
-			this->label13->Text = L"username";
+			this->label13->Text = L"username                  ";
 			this->label13->Click += gcnew System::EventHandler(this, &Login_Sign::label13_Click);
 			// 
 			// dname
@@ -1151,7 +1154,7 @@ private: System::Windows::Forms::Button^ button3;
 			this->dname->Font = (gcnew System::Drawing::Font(L"Lato", 14));
 			this->dname->Location = System::Drawing::Point(3, 4);
 			this->dname->Name = L"dname";
-			this->dname->Size = System::Drawing::Size(212, 23);
+			this->dname->Size = System::Drawing::Size(217, 23);
 			this->dname->TabIndex = 0;
 			this->dname->TextChanged += gcnew System::EventHandler(this, &Login_Sign::dname_TextChanged);
 			// 
@@ -1263,7 +1266,7 @@ private: System::Windows::Forms::Button^ button3;
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 private: System::Void label1_Click_1(System::Object^ sender, System::EventArgs^ e) {
-
+	this->pname->Focus();
 	this->label1->Hide();
 }
 private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -1271,8 +1274,9 @@ private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e)
 	this->ppass->Focus();
 
 }
-private: System::Void tpass_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void ppass_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	this->label2->Hide();
+	this->ppass->Focus();
 }
 
 private: System::Void Exit_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -1311,6 +1315,7 @@ private: System::Void pictureBox14_Click(System::Object^ sender, System::EventAr
 	Dindex--;
 	std::ofstream out;
 	out.open("doctor.txt");
+
 	for (size_t i = 0; i <= Dindex; i++)
 	{
 		out << doctor[i].dname << ',';
@@ -1345,6 +1350,7 @@ private: System::Void label10_Click(System::Object^ sender, System::EventArgs^ e
 
 }
 private: System::Void label13_Click(System::Object^ sender, System::EventArgs^ e) {
+
 	this->label13->Hide();
 	this->dname->Focus();
 
@@ -1413,30 +1419,34 @@ private: System::Void label20_Click(System::Object^ sender, System::EventArgs^ e
 }
 private: System::Void demail_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	this->label10->Hide();
+	this->demail->Focus();
+
 }
 private: System::Void dpass_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	this->label11->Hide();
+	this->dpass->Focus();
 
 }
 private: System::Void dname_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	this->label13->Hide();
-
+	this->dname->Focus();
 }
 private: System::Void dlocation_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	this->label16->Hide();
-
+	this->location->Focus();
 }
 private: System::Void dfees_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	this->label17->Hide();
-
+	this->fees->Focus();
 }
 private: System::Void pname_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-
+	this->pname->Focus();
 	this->label1->Hide();
 
 }
 private: System::Void pemail_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	this->label4->Hide();
+	this->pemail->Focus();
 
 }
 
